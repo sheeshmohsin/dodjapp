@@ -1,4 +1,4 @@
-Insta Hack
+DoDjApp
 ==============================
 
 Image upload sample API with lossless compression using task queue processing
@@ -44,5 +44,3 @@ For testing, you can use these commands::
 For panapp test, you can use this::
 
     $ python manage.py test imgapp
-
-# dodjapp
