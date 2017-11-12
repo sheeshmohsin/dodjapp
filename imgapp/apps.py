@@ -6,3 +6,6 @@ from django.apps import AppConfig
 
 class ImgappConfig(AppConfig):
     name = 'imgapp'
+
+    def ready(self):
+    	import imgapp.signals
