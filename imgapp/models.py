@@ -16,4 +16,4 @@ class Image(models.Model):
 	compressed_image = models.ImageField(upload_to=get_upload_file_path, blank=True, null=True)
 
 	def __unicode__(self):
-		return self.pk
+		return str(self.pk)
