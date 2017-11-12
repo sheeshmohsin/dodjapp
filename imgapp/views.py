@@ -5,14 +5,14 @@ from django.shortcuts import render
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework import authentication, permissions
+from rest_framework import authentication, permissions, viewsets
 
 from imgapp.models import Image
 from imgapp.serializers import ImageSerializer
 # Create your views here.
 
 
-class ImageView(APIView):
+class ImageView(viewsets.ModelViewSet):
 	"""
 	CRUD for Images
 	"""
@@ -25,6 +25,6 @@ class ImageView(APIView):
 		queryset = queryset.filter(user=self.request.user)
 		return queryset
 
-	def perform_create(self):
+	def perform_create(self, serializer):
 		""" Associate current user as image owner """
 		return serializer.save(user=self.request.user)
